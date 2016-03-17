@@ -6,6 +6,7 @@ requester = zmq_request('add_requester', 'tcp://localhost:6000');
 requester = int32(requester);
 
 disp('Start Pupil recording');
+tic;
 zmq_request('send_request', requester, 'start');
 
 reply = zmq_request('receive_reply', requester, 3000)
@@ -24,5 +25,7 @@ if isnan(reply)
 	zmq_request('close');
 	error('Impossible to communicate with the Pupil server.');
 end
+
+elapsed_time_matlab = toc
 
 zmq_request('close');
