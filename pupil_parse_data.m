@@ -1,4 +1,19 @@
 function data = pupil_parse_data(data_str)
+	% PUPIL_PARSE_DATA Parses the received data from cosy-pupil-server.
+	%
+	% data = PUPIL_PARSE_DATA(data_str)
+	%
+	% 'data_str' must be the reply of the 'receive_data' request to the
+	% cosy-pupil-server. 'data_str' is a single string with a key:value pair on
+	% each line.
+	%
+	% The return value is a struct array with the keys as the struct fields.
+	% For example data(1).diameter_px accesses the first diameter_px.
+	%
+	% In 'data_str', the diameter_px key must mark the beginning of a new
+	% sample.
+	%
+	% 2016 - Sébastien Wilmet
 	line_feed = 10; % '\n'
 	lines = strsplit(data_str, line_feed);
 
