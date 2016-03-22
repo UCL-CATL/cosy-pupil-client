@@ -1,8 +1,8 @@
-function parsed_data = pupil_parse_data(data)
+function data = pupil_parse_data(data_str)
 	line_feed = 10; % '\n'
-	lines = strsplit(data, line_feed);
+	lines = strsplit(data_str, line_feed);
 
-	parsed_data = [];
+	data = [];
 
 	for line_num = 1:length(lines)
 		line = lines{line_num};
@@ -12,9 +12,9 @@ function parsed_data = pupil_parse_data(data)
 			name = fields{1};
 			value = fields{2};
 			if strcmp(name, 'diameter_px')
-				parsed_data(end + 1).diameter_px = str2num(value);
+				data(end + 1).diameter_px = str2num(value);
 			elseif strcmp(name, 'timestamp')
-				parsed_data(end).timestamp = str2num(value);
+				data(end).timestamp = str2num(value);
 			end
 		end
 	end

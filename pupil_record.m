@@ -43,10 +43,12 @@ end
 disp('Receive data...');
 zmq_request('send_request', requester, 'receive_data');
 
-data = zmq_request('receive_reply', requester, 30000)
-if isnan(data)
+data_str = zmq_request('receive_reply', requester, 30000)
+if isnan(data_str)
 	zmq_request('close');
 	error('Timeout, impossible to communicate with the Pupil server.');
 end
 
 zmq_request('close');
+
+data = pupil_parse_data(data_str);
