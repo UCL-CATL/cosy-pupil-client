@@ -12,9 +12,9 @@ function data = pupil_parse_data(data_str)
 			name = fields{1};
 			value = fields{2};
 			if strcmp(name, 'diameter_px')
-				data(end + 1).diameter_px = str2num(value);
+				data(end + 1).diameter_px = str2double(value);
 			elseif strcmp(name, 'timestamp')
-				data(end).timestamp = str2num(value);
+				data(end).timestamp = str2double(value);
 			end
 		end
 	end
