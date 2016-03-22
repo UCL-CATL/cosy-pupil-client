@@ -52,3 +52,4 @@ end
 zmq_request('close');
 
 data = pupil_parse_data(data_str);
+pupil_check_timestamps(data);
