@@ -8,11 +8,12 @@ function data = pupil_parse_data(data_str)
 	% each line.
 	%
 	% The return value is a struct array with the keys as the struct fields.
-	% For example data(1).diameter_px accesses the first diameter_px.
+	% For example data(1).pupil_diameter_px accesses the first pupil_diameter_px.
 	%
 	% In 'data_str', the timestamp key must mark the beginning of a new sample.
 	%
 	% 2016 - Sébastien Wilmet
+
 	line_feed = 10; % '\n'
 	lines = strsplit(data_str, line_feed);
 
@@ -25,12 +26,19 @@ function data = pupil_parse_data(data_str)
 		if length(fields) == 2
 			name = fields{1};
 			value = fields{2};
+
 			if strcmp(name, 'timestamp')
 				data(end + 1).timestamp = str2double(value);
-			elseif strcmp(name, 'diameter_px')
-				data(end).diameter_px = str2double(value);
-			elseif strcmp(name, 'confidence')
-				data(end).confidence = str2double(value);
+			elseif strcmp(name, 'gaze_confidence')
+				data(end).gaze_confidence = str2double(value);
+			elseif strcmp(name, 'gaze_norm_pos_x')
+				data(end).gaze_norm_pos_x = str2double(value);
+			elseif strcmp(name, 'gaze_norm_pos_y')
+				data(end).gaze_norm_pos_y = str2double(value);
+			elseif strcmp(name, 'pupil_confidence')
+				data(end).pupil_confidence = str2double(value);
+			elseif strcmp(name, 'pupil_diameter_px')
+				data(end).pupil_diameter_px = str2double(value);
 			end
 		end
 	end
