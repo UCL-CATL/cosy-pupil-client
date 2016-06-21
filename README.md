@@ -1,13 +1,16 @@
 cosy-pupil-client
 =================
 
-The client of [cosy-pupil-server](https://github.com/UCL-CATL/cosy-pupil-server).
-The client uses Matlab with [cosy-zeromq-matlab](https://github.com/UCL-CATL/cosy-zeromq-matlab)
-for the ZeroMQ/Matlab binding.
+A Matlab client of [cosy-pupil-server](https://github.com/UCL-CATL/cosy-pupil-server).
 
 Version: 1.0
 
 cosy-pupil-client is licensed under the GNU General Public License version 3 or later.
+
+Dependencies
+------------
+
+- [cosy-zeromq-matlab](https://github.com/UCL-CATL/cosy-zeromq-matlab) >= 1.0
 
 Pupil diameter in millimeters
 -----------------------------
