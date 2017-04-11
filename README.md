@@ -3,7 +3,7 @@ cosy-pupil-client
 
 A Matlab client of [cosy-pupil-server](https://github.com/UCL-CATL/cosy-pupil-server).
 
-Version: 1.0
+Works on both GNU/Linux and Windows.
 
 cosy-pupil-client is licensed under the GNU General Public License version 3 or later.
 
