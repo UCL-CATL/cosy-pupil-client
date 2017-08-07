@@ -31,12 +31,18 @@ function data = pupil_parse_data(data_str)
 				data(end + 1).timestamp = str2double(value);
 			elseif strcmp(name, 'pupil_diameter')
 				data(end).pupil_diameter = str2double(value);
-			elseif strcmp(name, 'gaze_norm_pos_x')
-				data(end).gaze_norm_pos_x = str2double(value);
-			elseif strcmp(name, 'gaze_norm_pos_y')
-				data(end).gaze_norm_pos_y = str2double(value);
-			elseif strcmp(name, 'confidence')
-				data(end).confidence = str2double(value);
+			elseif strcmp(name, 'pupil_x')
+				data(end).pupil_x = str2double(value);
+			elseif strcmp(name, 'pupil_y')
+				data(end).pupil_y = str2double(value);
+			elseif strcmp(name, 'pupil_confidence')
+				data(end).pupil_confidence = str2double(value);
+			elseif strcmp(name, 'gaze_x')
+				data(end).gaze_x = str2double(value);
+			elseif strcmp(name, 'gaze_y')
+				data(end).gaze_y = str2double(value);
+			elseif strcmp(name, 'gaze_confidence')
+				data(end).gaze_confidence = str2double(value);
 			end
 		end
 	end
