@@ -1,6 +1,10 @@
 News in 2.1, 2017-08-07
 -----------------------
-* Port to cosy-pupil-server 2.1.
+* Adapt pupil_parse_data.m for cosy-pupil-server 2.1.
+
+News in 2.0, 2017-04-11
+-----------------------
+* Adapt pupil_parse_data.m for cosy-pupil-server 2.0.
 
 News in 1.0, 2016-05-02
 -----------------------
