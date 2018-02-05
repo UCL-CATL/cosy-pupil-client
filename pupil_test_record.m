@@ -72,7 +72,7 @@ if (~strcmp(reply, 'ack'))
 	error('Request not acked');
 end
 
-pause(1);
+pause(10);
 
 disp('Stop Pupil recording');
 zmq_request('send_request', requester, 'stop');
